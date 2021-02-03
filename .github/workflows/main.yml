@@ -20,6 +20,7 @@ jobs:
           python -m pip install -r requirements.txt -U
           lektor build --output-path website 
           git stash
+          git fetch
           git checkout ghpages
           git stash pop
           touch .nojekyll

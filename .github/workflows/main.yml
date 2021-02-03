@@ -20,8 +20,9 @@ jobs:
           python -m pip install -r requirements.txt -U
           lektor build --output-path website 
           git stash
-          git fetch origin ghpages
-          git checkout ghpages
+          git remote update
+          git fetch
+          git checkout --track origin/ghpages
           git stash pop
           touch .nojekyll
           mv -i ./website/* .

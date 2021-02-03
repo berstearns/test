@@ -29,7 +29,10 @@ jobs:
           git fetch 
           git checkout ghpages
           git stash pop
+          echo 'stash pop'
           git checkout --theirs .
+          echo 'checkout'
           git add .
+          echo 'add'
           git commit -am "[GITHUB ACTIONS] Automated blog generation"
           git push origin ghpages 

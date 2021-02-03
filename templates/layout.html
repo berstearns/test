@@ -1,6 +1,11 @@
 <!doctype html>
+{% if this.isindex %}
+    {% set BASE_FOLDER = "." %}
+{% else %}
+    {% set BASE_FOLDER = ".." %}
+{% endif %}
 <head>
-    <link rel="stylesheet" href="/static/bootstrap.min.css" integrity="">
+    <link rel="stylesheet" href="{{BASE_FOLDER}}/static/bootstrap.min.css" integrity="">
     <style>
         * {
             font-family: 'Roboto', sans-serif;
@@ -35,7 +40,7 @@
     </style>
 </head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
+<link rel="stylesheet" href="{{BASE_FOLDER}}/static/style.css}}">
 <title>{% block title %}Welcome{% endblock %} — pret-a-llod</title>
 <body>
 
@@ -44,7 +49,7 @@
       <div class="container-fluid">
       <!-- Brand/logo -->
       <a class="navbar-brand" href="/index.html">
-        <img src="/static/img.jpg" alt="logo" style="height:100px">
+          <img src="{{BASE_FOLDER}}/static/img.jpg" alt="logo" style="height:100px">
       </a>
       
       <!-- Links -->

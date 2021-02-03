@@ -23,7 +23,9 @@ jobs:
           rm -rf website
           git remote update
           git fetch 
+          git stash
           git checkout ghpages
+          git stash pop
           git config --global user.name 'berstearns'
           git config --global user.email 'bernardo.stearns@gmail.com'
           git add .

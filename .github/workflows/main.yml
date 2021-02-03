@@ -1,0 +1,33 @@
+name: CI
+
+on: 
+    push:
+        branches: [ master ]
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+            ref: master 
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.6'
+          architecture: x64
+      - run: |
+          python -m pip install -r requirements.txt -U
+          lektor build --output-path website 
+          git stash
+          git checkout ghpages
+          git stash pop
+          touch .nojekyll
+          mv -i ./website/* .
+          rm -rf website
+      - name: Commit report
+        run: |
+          git config --global user.name 'berstearns'
+          git config --global user.email 'bernardo.stearns@gmail.com'
+          git commit -am "[GITHUB ACTIONS] Automated blog generation"
+          git push origin ghpages 

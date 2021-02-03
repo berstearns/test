@@ -1,9 +1,4 @@
-<!doctype html>
-{% if this.isindex %}
-    {% set BASE_FOLDER = "." %}
-{% else %}
-    {% set BASE_FOLDER = ".." %}
-{% endif %}
+<!doctype html #333>
 <head>
     <link rel="stylesheet" href="/static/bootstrap.min.css" integrity="">
     <style>
@@ -11,7 +6,7 @@
             font-family: 'Roboto', sans-serif;
         }
         .content {
-            margin-left: 6px;
+            margin-left: 5px;
             height: fit-content;
         }
         .container {
@@ -23,7 +18,7 @@
         }
         .navbar a {
           text-transform:capitalize;
-          color: #333;
+          color: red;
         }
         .navbar {
           border-bottom: 1px dashed #aaa;
@@ -40,7 +35,7 @@
     </style>
 </head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="/static/style.css'}}">
+<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
 <title>{% block title %}Welcome{% endblock %} — pret-a-llod</title>
 <body>
 
@@ -49,7 +44,7 @@
       <div class="container-fluid">
       <!-- Brand/logo -->
       <a class="navbar-brand" href="/index.html">
-          <img src="/static/img.jpg" alt="logo" style="height:100px">
+        <img src="/static/img.jpg" alt="logo" style="height:100px">
       </a>
       
       <!-- Links -->

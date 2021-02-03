@@ -1,4 +1,4 @@
-<!doctype html #333>
+<!doctype html>
 <head>
     <link rel="stylesheet" href="/static/bootstrap.min.css" integrity="">
     <style>
@@ -14,11 +14,11 @@
         }
         .navbar .nav-link:hover {
           border-bottom: 3px solid red;
-          color: #333;
+          color: blue;
         }
         .navbar a {
           text-transform:capitalize;
-          color: red;
+          color: #333;
         }
         .navbar {
           border-bottom: 1px dashed #aaa;
@@ -35,8 +35,8 @@
     </style>
 </head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
-<title>{% block title %}Welcome{% endblock %} — pret-a-llod</title>
+<link rel="stylesheet" href="../../static/style.css">
+<title>Prêt-à-LLOD Kick-off Meeting — pret-a-llod</title>
 <body>
 
   <header>
@@ -49,29 +49,53 @@
       
       <!-- Links -->
       <ul class="nav navbar-nav navbar-right">
-        {% for href, title in [
-              ['/partners', 'Partners'],
-              ['/projects', 'Projects'],
-              ['/about', 'About'],
-              ['/blog', 'Blog'],
-            ] 
-        %}        
+                
           <li class="nav-item">
-                  <a class="nav-link" href="{{ href|url}}">{{ title }}</a>
+                  <a class="nav-link" href="../../partners/">Partners</a>
           </li>
-        {% endfor %}
-        <a class="nav-link" href="{{'/'|url }}">Main Page</a>
+                
+          <li class="nav-item">
+                  <a class="nav-link" href="../../projects/">Projects</a>
+          </li>
+                
+          <li class="nav-item">
+                  <a class="nav-link" href="../../about/">About</a>
+          </li>
+                
+          <li class="nav-item">
+                  <a class="nav-link" href="../">Blog</a>
+          </li>
+        
+        <a class="nav-link" href="../../">Main Page</a>
       </ul>
       </div>
     </nav>
   </header>
-  {% if this.isindex %}
-        <div class="jumbotron" style="background-image:url('/static/website-new-banner.jpg');background-repeat:no-repeat;background-size:100%;height:320px;"></div>
-  {% endif %}
+  
     <div class="container">
        <div class="row">
         <div class="content jumbotron col-9">
-        {% block body %}{% endblock %}
+        
+  
+  <div class="blog-post">
+  
+    <h2>Prêt-à-LLOD Kick-off Meeting</h2>
+  
+  <p class="meta">
+    written by
+    
+      John McCrae
+    
+    on 
+  </p>
+  
+      <p>Prêt-à-LLOD Kick-off Meeting took a place in the Data Science Institute,
+NUI Galway, Ireland on January 17–18, 2019.</p>
+
+  
+  </div>
+
+
         </div>
         <div class="col-2" id="sidebar">
             <section class="bg-dark" style="font-size: 50%;width: 200%;height: 150px">

@@ -1,0 +1,99 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="/static/bootstrap.min.css" integrity="">
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        .content {
+            margin-left: 5px;
+            height: fit-content;
+        }
+        .container {
+            margin-top: 10px;
+        }
+        .navbar .nav-link:hover {
+          border-bottom: 3px solid red;
+          color: blue;
+        }
+        .navbar a {
+          text-transform:capitalize;
+          color: #333;
+        }
+        .navbar {
+          border-bottom: 1px dashed #aaa;
+          border-top: 1px dashed #aaa;
+          margin: 5px;
+        }
+        #formcontainer {
+                text-align: left;
+                margin-left: 0px;
+        }
+         #sidebar {
+            display: block;
+         }
+    </style>
+</head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
+<title>{% block title %}Welcome{% endblock %} — pret-a-llod</title>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+      <!-- Brand/logo -->
+      <a class="navbar-brand" href="/index.html">
+        <img src="/static/img.jpg" alt="logo" style="height:100px">
+      </a>
+      
+      <!-- Links -->
+      <ul class="nav navbar-nav navbar-right">
+        {% for href, title in [
+              ['/partners', 'Partners'],
+              ['/projects', 'Projects'],
+              ['/about', 'About'],
+              ['/blog', 'Blog'],
+            ] 
+        %}        
+          <li class="nav-item">
+                  <a class="nav-link" href="{{ href|url}}">{{ title }}</a>
+          </li>
+        {% endfor %}
+        <a class="nav-link" href="{{'/'|url }}">Main Page</a>
+      </ul>
+      </div>
+    </nav>
+  </header>
+  {% if this.isindex %}
+        <div class="jumbotron" style="background-image:url('/static/website-new-banner.jpg');background-repeat:no-repeat;background-size:100%;height:320px;"></div>
+  {% endif %}
+    <div class="container">
+       <div class="row">
+        <div class="content jumbotron col-9">
+        {% block body %}{% endblock %}
+        </div>
+        <div class="col-2" id="sidebar">
+            <section class="bg-dark" style="font-size: 50%;width: 200%;height: 150px">
+                <div id="formcontainer" class="container p-3">
+                    <h5 class="text-white">SUBSCRIBE NOW</h3>
+                    <form action="#" method="Post">
+                        <input type="text" name="text" placeholder="Enter Your Email Id">
+                        <button type="button" class="btn btn-default" style:"width: 50%">Subscribe<i class="fa fa-envelope"></i></button>
+                    </form>
+                </div>
+            </section>
+            <a class="twitter-timeline" data-width="420" data-height="500" href="https://twitter.com/pret_a_llod?ref_src=twsrc%5Etfw">Tweets by pret_a_llod</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+
+
+       </div>
+    </div>
+
+
+
+
+  <footer>
+    &copy; Copyright 2021 by bernardo stearns.
+  </footer>
+</body>

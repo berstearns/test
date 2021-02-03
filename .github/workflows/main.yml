@@ -31,7 +31,7 @@ jobs:
           git stash pop
           echo 'stash pop'
           git checkout --theirs .
-          echo 'checkout'
+          echo 'checkout!!'
           git add .
           echo 'add'
           git commit -am "[GITHUB ACTIONS] Automated blog generation"

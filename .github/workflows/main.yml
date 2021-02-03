@@ -21,6 +21,8 @@ jobs:
           lektor build --output-path website 
           mv -i ./website/* .
           rm -rf website
+          git remote update
+          git fetch 
           git checkout ghpages
           git config --global user.name 'berstearns'
           git config --global user.email 'bernardo.stearns@gmail.com'

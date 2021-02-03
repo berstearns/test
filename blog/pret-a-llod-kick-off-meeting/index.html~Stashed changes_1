@@ -36,7 +36,7 @@
 </head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="../../static/style.css">
-<title>TEI-OntoLex Workshop — pret-a-llod</title>
+<title>Prêt-à-LLOD Kick-off Meeting — pret-a-llod</title>
 <body>
 
   <header>
@@ -79,26 +79,18 @@
   
   <div class="blog-post">
   
-    <h2>TEI-OntoLex Workshop</h2>
+    <h2>Prêt-à-LLOD Kick-off Meeting</h2>
   
   <p class="meta">
     written by
     
-      
+      John McCrae
     
     on 
   </p>
   
-      <p>In collaboration with the ELEXIS H2020 project, a two day workshop
-connecting the main developers of the OntoLex-Lemon model and the TEI
-Lex-0 model was held on the 4th and 5th of October in Sintra,
-Portugal after the eLex conference. In this meeting, discussions were
-held about the interaction of the two models and their differences. As a
-principal results, it was surmised that the models were complementary as
-TEI-Lex0 aims to maintain the dictionary as an artifact, while
-OntoLex-Lemon is a data model. As a result, researchers from both sides
-agreed to create an authorative mapping between TEI and OntoLex as an
-XSLT stylesheet on GitHub at <a href="https://github.com/elexis-eu/tei2ontolex">https://github.com/elexis-eu/tei2ontolex</a>.</p>
+      <p>Prêt-à-LLOD Kick-off Meeting took a place in the Data Science Institute,
+NUI Galway, Ireland on January 17–18, 2019.</p>
 
   
   </div>

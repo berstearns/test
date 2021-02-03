@@ -1,0 +1,18 @@
+lektor build --output-path website
+mv -i website/* .
+rm -rf website
+git config --global user.name 'berstearns'
+git config --global user.email 'bernardo.stearns@gmail.com'
+git add .
+git stash
+git remote update
+git fetch 
+git checkout ghpages
+git stash pop
+echo 'stash pop'
+git checkout --theirs .
+echo 'checkout'
+git add .
+echo 'add'
+git commit -am "[GITHUB ACTIONS] Automated blog generation"
+git push origin ghpages 

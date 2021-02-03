@@ -23,6 +23,7 @@ jobs:
           rm -rf website
           git remote update
           git fetch 
+          git add .
           git stash
           git checkout ghpages
           git stash pop
